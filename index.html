@@ -1,0 +1,721 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+    .navbar{
+  background:#000;
+}
+.navbar-brand,
+.nav-link{
+  color:#fff !important;
+  font-size:18px;
+}
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  .reviews-section {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    padding: 60px 20px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .reviews-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .review-item {
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .review-item:hover {
+    transform: scale(1.05);
+  }
+  .review-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #ff6b81;
+  }
+  .reviewer-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  .review-rating {
+    color: #ffcc00;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  
+/* ---------- PRODUCT CARD ---------- */
+.product-img{
+  height:220px;
+  object-fit:contain;
+}
+
+.add-cart-btn{
+  background:#0f5132;
+  color:#fff;
+  border-radius:8px;
+}
+.add-cart-btn:hover{
+  background:#0c4128;
+  color:#fff;
+}
+
+/* ---------- DETAILS POPUP ---------- */
+#detailsBox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:1000;
+}
+#detailsContent{
+  background:#fff;
+  max-width:450px;
+  margin:6% auto;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+#detailsContent img{
+  width:100%;
+  height:250px;
+  object-fit:contain;
+  margin-bottom:15px;
+}
+
+
+
+
+body { padding-top: 50px; background-color: #f8f9fa; }
+        .form-container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; }
+        h1 { text-align: center; margin-bottom: 40px; font-weight: 400; color: #333; }
+        .form-control { margin-bottom: 15px; border-color: #ddd; }
+        .btn-signup { background-color: #007bff; color: white; width: 100px; }
+        .btn-login { background-color: #198754; color: white; width: 100px; }
+        .section-divider { margin: 40px 0; border-top: 1px solid #eee; }
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+  <div class="container">
+    <a style="font-family: Arial, Helvetica, sans-serif;" class="navbar-brand fw-bold" href="index.html">
+     Self_Care 🪢
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+      <ul class="navbar-nav align-items-lg-center gap-lg-3 text-center">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+         <nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">MyShop</a>
+    <div class="ms-auto">
+      <span class="text-white me-2">Cart</span>
+      <span id="cartCount" class="badge bg-danger">0</span>
+    </div>
+  </div>
+</nav>
+
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light btn-sm" href="#">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-light btn-sm text-dark" href="#">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="height:70px;"></div>
+
+
+<div class="container my-3">
+  <div id="mainBanner" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active">
+        <img src="images/banner001.png" class="d-block w-100 banner-img" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.vecteezy.com/system/resources/previews/028/193/748/non_2x/natural-skin-care-illustration-of-women-applying-cosmetics-face-skincare-products-with-organic-ingredients-in-flat-cartoon-background-template-vector.jpg" class="d-block w-100 banner-img" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="https://t3.ftcdn.net/jpg/02/60/46/54/360_F_260465426_xfbRnM6QG4OzS5AmZPnx7qqfBjdsCw70.jpg" class="d-block w-100 banner-img" alt="">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainBanner" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#mainBanner" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</div>
+
+<br>
+<section class="about-us-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        
+        <h2 class="about-title">Its Our Products</h2>
+<br>
+        <p class="about-text">
+          <strong>Beauty begins with healthy, confident skin.</strong> Our skin
+          care and makeup products are thoughtfully selected to enhance your
+          natural glow while delivering visible, lasting results.
+        </p>
+
+        <p class="about-text">
+          <strong>Quality, safety, and performance</strong> are at the heart of
+          everything we offer. Each product is carefully chosen to suit
+          different skin types, ensuring comfort, nourishment, and flawless
+          beauty every day.
+        </p>
+
+        <p class="about-text">
+          <strong>From daily essentials to premium makeup,</strong> our
+          collection empowers you to express your beauty with confidence —
+          because your skin deserves the best care.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container my-4">
+  <div class="row g-4">
+
+    <!-- PRODUCT 1 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/001.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Organic Product</h6>
+          <p>৳ 2500</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Organic Product',2500,'images/001.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Organic Product',
+              '৳ 2500',
+              'Natural organic skincare product.',
+              'images/001.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/002.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Brush's</h6>
+          <p>৳ 3200</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Brushs',3200,'images/002.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Brushs',
+              '৳ 3200',
+              'Professional makeup brushes set.',
+              'images/002.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/003.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Branded Products</h6>
+          <p>৳ 1800</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Branded Products',1800,'images/003.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Branded Products',
+              '৳ 1800',
+              'High quality branded cosmetics.',
+              'images/003.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 4 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/004.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Makeup</h6>
+          <p>৳ 950</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Makeup',950,'images/004.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Makeup',
+              '৳ 950',
+              'Daily use makeup product.',
+              'images/004.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 5 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/005.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Eye</h6>
+          <p>৳ 3000</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Eye',3000,'images/005.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Eye',
+              '৳ 3000',
+              'Eye care and makeup product.',
+              'images/005.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 6 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/006.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Cream</h6>
+          <p>৳ 3600</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Cream',3600,'images/006.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Cream',
+              '৳ 3600',
+              'Premium skin cream.',
+              'images/006.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 7 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/007.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Moisturizer</h6>
+          <p>৳ 2000</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Moisturizer',2000,'images/007.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Moisturizer',
+              '৳ 2000',
+              'Hydrating moisturizer.',
+              'images/007.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 8 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card h-100">
+        <img src="images/008.png" class="product-img">
+        <div class="card-body text-center">
+          <h6>Serum</h6>
+          <p>৳ 2800</p>
+
+          <input type="number" value="1" min="1" class="form-control mb-2">
+
+          <button class="btn add-cart-btn w-100 mb-2"
+            onclick="addToCart(this,'Serum',2800,'images/008.png')">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-outline-dark w-100"
+            onclick="viewDetails(
+              'Serum',
+              '৳ 2800',
+              'Skin repair serum.',
+              'images/008.png'
+            )">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="detailsBox">
+  <div id="detailsContent">
+    <img id="dImg">
+    <h5 id="dName"></h5>
+    <p id="dPrice"></p>
+    <p id="dDesc"></p>
+    <button class="btn btn-dark w-100" onclick="closeDetails()">Close</button>
+  </div>
+</div>
+
+<script>
+let cart = [];
+function addToCart(btn,name,price,img){
+  cart.push({name,price});
+  document.getElementById("cartCount").innerText = cart.length;
+}
+function viewDetails(name,price,desc,img){
+  dName.innerText = name;
+  dPrice.innerText = price;
+  dDesc.innerText = desc;
+  dImg.src = img;
+  detailsBox.style.display = "block";
+}
+function closeDetails(){
+  detailsBox.style.display = "none";
+}
+</script>
+
+
+
+ 
+    <div id="productDetails" style="display:none; position:fixed; inset:0; background:#000000cc; z-index:999;">
+  <div style="background:#fff; max-width:400px; margin:10% auto; padding:20px;">
+    <img id="dImg" class="img-fluid mb-2">
+    <h5 id="dName"></h5>
+    <p id="dPrice"></p>
+    <p id="dDesc"></p>
+    <button class="btn btn-dark w-100" onclick="closeDetails()">Close</button>
+  </div>
+</div>
+<br> <br>
+<section class="reviews-section">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="reviews-wrapper">
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=1" alt="Customer 1" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Emma S.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Absolutely love the skincare products! My skin feels so smooth and radiant.</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=2" alt="Customer 2" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Olivia K.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">The makeup lasts all day and feels very light on the skin. Highly recommend!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=3" alt="Customer 3" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Sophia L.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Beautiful products with amazing packaging. Totally worth it!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=4" alt="Customer 4" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Ava M.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">My favorite skincare brand now. Gentle and effective for daily use.</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=5" alt="Customer 5" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Isabella T.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">The lipsticks are stunning and very long-lasting. Love the colors!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=6" alt="Customer 6" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Mia k.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Skin feels hydrated and nourished after using the creams. Amazing!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=7" alt="Customer 7" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Charlotte W.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Products are premium quality. Delivery was fast and smooth.</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=8" alt="Customer 8" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Amelia R.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Makeup products blend beautifully. Very impressed with the finish!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=9" alt="Customer 9" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Harper J.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">The skincare set made my skin glow in just a few days. Amazing results!</p>
+        </div>
+      </div>
+      <div class="review-item">
+        <img src="https://i.pravatar.cc/80?img=10" alt="Customer 10" class="review-img">
+        <div class="review-content">
+          <h3 class="reviewer-name">Ella C.</h3>
+          <div class="review-rating">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">Highly satisfied with the products. Would definitely reorder soon!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br> <br>
+
+
+
+
+
+<div class="container form-container">
+    <h1>Registration</h1>
+
+    <form id="signupForm">
+        <input type="text" class="form-control" placeholder="First Name" required>
+        <input type="text" class="form-control" placeholder="Last Name" required>
+        <input type="tel" class="form-control" placeholder="Phone" required>
+        <input type="email" class="form-control" placeholder="Email" required>
+        <input type="text" class="form-control" placeholder="Username" required>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <button type="submit" class="btn btn-signup">Signup</button>
+    </form>
+
+    <div class="section-divider"></div>
+
+    <form id="loginForm">
+        <input type="text" class="form-control" placeholder="Username" required>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <button type="submit" class="btn btn-login">Login</button>
+    </form>
+</div>
+
+
+<div class="bg-black text-white  ">
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+
+    
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h4 class="footer-title"> <br>Self_Care</h4>
+        <p class="footer-text">
+          Glow Beauty offers premium skincare and makeup products designed
+          to enhance your natural beauty with confidence and care.
+        </p>
+        <p><strong>Email:</strong> support@selfcare.com</p>
+        <p><strong>Phone:</strong> +880 17XX-XXXXXX</p>
+        <p><strong>Address:</strong> Dhaka, Bangladesh</p>
+      </div>
+
+      
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h4 class="footer-title"> <br> Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li> <br>
+          <li><a href="#">Products</a></li> <br>
+          <li><a href="#">About Us</a></li> <br>
+          <li><a href="#">Contact</a></li> <br>
+          <li><a href="#">Privacy Policy</a></li> <br>
+        </ul>
+      </div>
+
+    
+      <div class="col-lg-4 col-md-12 mb-4">
+        <h4 class="footer-title"> <br> Stay Connected</h4>
+        <p>Subscribe for updates, offers, and beauty tips.</p>
+
+        <form class="footer-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button> <br>
+        </form>
+
+        <div class="social-links">
+           <br> <a href="#">Facebook</a> <br>
+          <a href="#">Instagram</a><br>
+          <a href="#">Twitter</a> <br>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <p>© 2025 Glow Beauty. All Rights Reserved.  </p>
+    </div>
+  </div>
+</footer>
+<br>
+</div>
+
+
+<script src="form.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    <!-- Product Details Modal --><div id="productModal" class="modal-overlay">
+  <div class="modal-box">
+    <img id="modalImg" src="" alt=""/>
+    <h3 id="modalTitle"></h3>
+    <p id="modalPrice"></p>
+    <p id="modalDesc"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+
+
+function viewDetails(title, price, desc, img){
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalPrice").innerText = price;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("modalImg").src = img;
+
+  document.getElementById("productModal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("productModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
