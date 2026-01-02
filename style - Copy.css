@@ -1,31 +1,28 @@
-/* ================= NAVBAR SIZE INCREASE ================= */
 
-/* Navbar height */
 .navbar {
   padding-top: 16px;
   padding-bottom: 16px;
 }
 
-/* Company name (Brand) */
 .navbar-brand {
-  font-size: 24px;        /* আগের চেয়ে বড় */
+  font-size: 24px;       
   letter-spacing: 1.2px;
 }
 
-/* Menu text */
+
 .nav-link {
-  font-size: 18px;        /* Home, About, Products */
+  font-size: 18px;        
   padding-left: 14px;
   padding-right: 14px;
 }
 
-/* Cart text */
+
 .nav-link span,
 #cart-count {
   font-size: 18px;
 }
 
-/* Buttons (Sign in / Login) */
+
 .navbar .btn {
   font-size: 16px;
   padding: 8px 16px;
@@ -36,7 +33,7 @@
     font-style: italic;
 }
 
-/* MOBILE responsive adjust */
+
 @media (max-width: 991px) {
   .navbar-brand {
     font-size: 22px;
@@ -52,21 +49,20 @@
   }
 }
 
-/* banner image size */
+
 .banner-img {
   height: 240px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* tablet */
+
 @media (max-width: 992px) {
   .banner-img {
     height: 200px;
   }
 }
 
-/* mobile */
 @media (max-width: 576px) {
   .banner-img {
     height: 150px;
@@ -104,19 +100,19 @@
   margin-bottom: 10px;
 }
 
-/* Cart Button */
+
 .product-card .btn {
-  background-color: #6f42c1;      /* purple */
+  background-color: #6f42c1;      
   border: none;
-  border-radius: 25px;            /* rounded */
+  border-radius: 25px;            
   color: #fff;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
-/* Hover Effect */
+
 .product-card .btn:hover {
-  background-color: #5a32a3;      /* dark purple on hover */
+  background-color: #5a32a3;      
   transform: scale(1.03);
 }
 
@@ -166,16 +162,16 @@ body {
   background:#0c4128;
   color:#fff;
 }
-/* =================== ATTRACTIVE DARK FOOTER =================== */
+
 .footer-section {
-    padding: 40px 20px;       /* pt / pb */
-    border-radius: 15px;      /* rounded corners */
-    background-color: #000;   /* black bg */
-    color: #fff;              /* white text */
+    padding: 40px 20px;      
+    border-radius: 15px;      
+    background-color: #000;   
+    color: #fff;              
 }
 
 .footer-section .footer-title {
-    color: #ffcc00;           /* title color */
+    color: #ffcc00;          
     margin-bottom: 15px;
 }
 
@@ -196,14 +192,14 @@ body {
 
 .footer-section .footer-form input {
     padding: 8px 12px;
-    border-radius: 8px;      /* input rounded */
+    border-radius: 8px;      
     border: none;
     margin-right: 5px;
 }
 
 .footer-section .footer-form button {
     padding: 8px 15px;
-    border-radius: 8px;      /* button rounded */
+    border-radius: 8px;      
     border: none;
     background-color: #ffcc00;
     color: #000;
@@ -220,7 +216,7 @@ body {
     margin-right: 10px;
     margin-top: 10px;
     padding: 6px 12px;
-    border-radius: 8px;      /* social links rounded */
+    border-radius: 8px;     
     background-color: #111;
     color: #fff;
     text-decoration: none;
